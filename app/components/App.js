@@ -1,9 +1,17 @@
 var React = require('react');
+var Grid = require('./Grid');
+var Drop = require('./Drop');
 
-class Welcome extends React.Component {
+class App extends React.Component {
 	render() {
-		return <h1>Hello, {this.props.name}</h1>;
+		return (
+			<div>
+				<h1>Brandon</h1>
+				<Drop />
+				<Grid />
+			</div>
+		);
 	}
 }
 
-module.exports = Welcome;
+module.exports = App;
