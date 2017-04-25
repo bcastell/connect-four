@@ -1,4 +1,4 @@
-var React = require('react');
+import React from 'react';
 
 class Hole extends React.Component {
 	render() {
@@ -8,4 +8,4 @@ class Hole extends React.Component {
 	}
 }
 
-module.exports = Hole;
+export default Hole;

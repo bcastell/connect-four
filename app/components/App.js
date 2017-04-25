@@ -1,12 +1,13 @@
-var React = require('react');
-var Grid = require('./Grid');
-var Drop = require('./Drop');
+import React from 'react';
+import Grid from './Grid';
+import Drop from './Drop';
+import Style from '../stylesheets/main.scss';
 
 class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Brandon</h1>
+				<h1 className="testing">Brandon</h1>
 				<Drop />
 				<Grid />
 			</div>
@@ -14,4 +15,4 @@ class App extends React.Component {
 	}
 }
 
-module.exports = App;
+export default App;

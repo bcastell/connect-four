@@ -1,5 +1,5 @@
-var React = require('react');
-var Row = require('./Row');
+import React from 'react';
+import Row from './Row';
 
 class Grid extends React.Component {
 	render() {
@@ -16,4 +16,4 @@ class Grid extends React.Component {
 	}
 }
 
-module.exports = Grid;
+export default Grid;

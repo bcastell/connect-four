@@ -1,5 +1,5 @@
-var React = require('react');
-var Hole = require('./Hole');
+import React from 'react';
+import Hole from './Hole';
 
 class Row extends React.Component {
 	render() {
@@ -17,4 +17,4 @@ class Row extends React.Component {
 	}
 }
 
-module.exports = Row;
+export default Row;
