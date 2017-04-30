@@ -7,7 +7,6 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1 className="testing">Brandon</h1>
 				<Drop />
 				<Grid />
 			</div>

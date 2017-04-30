@@ -1,14 +1,14 @@
 import React from 'react';
 import Style from '../stylesheets/main.scss';
 
-class Hole extends React.Component {
+class Chip extends React.Component {
 	render() {
 		return (
-			<div className="hole">
+			<div className="chip">
 
 			</div>
 		);
 	}
 }
 
-export default Hole;
+export default Chip;

@@ -1,9 +1,11 @@
 @charset 'UTF-8';
 
-// Sass tools and helpers for the project
-@import
-	'abstracts/variables';
+// Sass tools and helpers
+@import 'abstracts/variables';
 
-// React component styles
-@import
-	'components/drop';
+// Components
+@import	'components/drop';
+@import	'components/chip';
+@import 'components/grid';
+@import 'components/row';
+@import 'components/hole';
