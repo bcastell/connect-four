@@ -1,8 +1,24 @@
 .chip {
-	background: #f00;
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
 	margin-left: 15px;
 	margin-right: 15px;
 }
+
+.chip:focus {
+	outline: none;
+}
+
+.chip-white {
+	background: white;
+}
+
+.chip-red {
+	background: red;
+}
+
+.chip-yellow {
+	background: yellow;
+}
+

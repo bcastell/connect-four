@@ -6,13 +6,13 @@ class Drop extends React.Component {
 	render() {
 		return (
 			<div className="drop">
-				<Chip />
-				<Chip />
-				<Chip />
-				<Chip />
-				<Chip />
-				<Chip />
-				<Chip />
+				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
+				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
+				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
+				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
+				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
+				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
+				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
 			</div>
 		);
 	}
