@@ -17,12 +17,15 @@ class Chip extends React.Component {
 
 	render() {
 		var chipStyle = "chip";
+
 		if (this.state.hover && this.props.red) {
 				chipStyle += " chip-red";
 		}
+
 		else if (this.state.hover && !this.props.red) {
 				chipStyle += " chip-yellow";
 		}
+
 		else {
 			chipStyle += " chip-white";
 		}

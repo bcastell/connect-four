@@ -3,16 +3,20 @@ import Chip from './Chip';
 import Style from '../stylesheets/main.scss';
 
 class Drop extends React.Component {
+	renderChip(i) {
+		return <Chip onClick={() => this.props.onClick(i)} red={this.props.color} />;
+	}
+
 	render() {
 		return (
 			<div className="drop">
-				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
-				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
-				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
-				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
-				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
-				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
-				<Chip onClick={() => this.props.onClick()} red={this.props.color} />
+				{this.renderChip(0)}
+				{this.renderChip(1)}
+				{this.renderChip(2)}
+				{this.renderChip(3)}
+				{this.renderChip(4)}
+				{this.renderChip(5)}
+				{this.renderChip(6)}
 			</div>
 		);
 	}
