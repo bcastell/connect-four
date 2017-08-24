@@ -1,0 +1,36 @@
+.restart {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.reset-button {
+	font-size: 1.25em;
+	font-weight: 700;
+	color: #2a3439;
+	cursor: pointer;
+	margin-top: 36px;
+	padding: 12px 24px 12px 24px;
+	border: 2px solid #696969;
+	border-radius: 6px;
+	text-decoration: none !important;
+}
+
+.reset-button:focus,
+.reset-button:hover {
+	background-color: #d3d3d3;
+	box-shadow: 0 0 1.5pt 1.5pt #000080;
+}
+
+.reset-button-blue {
+	background-color: #89cff0;
+}
+
+.reset-button-red {
+	background-color: red;
+}
+
+.reset-button-yellow {
+	background-color: yellow;
+}
+

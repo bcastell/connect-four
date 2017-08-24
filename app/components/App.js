@@ -1,19 +1,19 @@
 import React from 'react';
 import Grid from './Grid';
 import Drop from './Drop';
+import Restart from './Restart';
 import Style from '../stylesheets/main.scss';
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
-
-		const rows = 6;
-		const columns = 7;
+		this.handleRestart = this.handleRestart.bind(this);
 
 		this.state = {
 			red : true,
-			grid : Array(rows * columns).fill(null)
+			grid : Array(42).fill(null),
+			winner : false
 		};
 	}
 
@@ -62,6 +62,7 @@ class App extends React.Component {
 	}
 
 	handleClick(i) {
+		// Fix when column is full, clicked, and color still changes
 		const holes = this.state.grid.slice();
 		for (let j = 41 - Math.abs(i - 6); j >= 0; j -= 7) {
 			if (!holes[j]) {
@@ -71,22 +72,32 @@ class App extends React.Component {
 		}
 
 		const color = this.state.red ? 'R' : 'Y';
-		if (this.checkWin(holes, color)) {
-			window.alert("Winner!");
-		}
+		const won = this.checkWin(holes, color);
 
 		this.setState({
 			red : !this.state.red,
-			grid : holes
+			grid : holes,
+			winner : won
+		});
+	}
+
+	handleRestart() {
+		this.setState({
+			red : true,
+			grid : Array(42).fill(null),
+			winner : false
 		});
 	}
 
 	render() {
 		return (
 			<div>
-				<Drop onClick={(i) => this.handleClick(i)}
+				<Drop onClick={i => this.handleClick(i)}
 					  color={this.state.red} />
 				<Grid holes={this.state.grid} />
+				<Restart onClick={() => this.handleRestart()}
+						 color={this.state.red}
+						 won={this.state.winner} />
 			</div>
 		);
 	}
