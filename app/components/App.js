@@ -63,22 +63,27 @@ class App extends React.Component {
 
 	handleClick(i) {
 		// Fix when column is full, clicked, and color still changes
+		if (!this.state.winner) {
 		const holes = this.state.grid.slice();
+		var filled = false;
 		for (let j = 41 - Math.abs(i - 6); j >= 0; j -= 7) {
 			if (!holes[j]) {
 				holes[j] = this.state.red ? 'R' : 'Y';
+				filled = true;
 				break;
 			}
 		}
 
+		const flip = filled ? !this.state.red : this.state.red;
 		const color = this.state.red ? 'R' : 'Y';
 		const won = this.checkWin(holes, color);
 
 		this.setState({
-			red : !this.state.red,
+			red : flip,
 			grid : holes,
 			winner : won
 		});
+		}
 	}
 
 	handleRestart() {
