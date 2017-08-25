@@ -2,20 +2,22 @@ import React from 'react';
 import Style from '../stylesheets/main.scss';
 
 class Hole extends React.Component {
-	render() {
-		var holeStyle = "hole";
+	getStyle() {
+		var style = "hole";
 		const color = this.props.holes[this.props.value];
 
-		if (color === 'R') {
-			holeStyle += " hole-red";
-		}
+		if (color === "R")
+			style += " hole-red";
 
-		if (color === 'Y') {
-			holeStyle += " hole-yellow";
-		}
+		if (color === "Y")
+			style += " hole-yellow";
 
+		return style;
+	}
+
+	render() {
 		return (
-			<div className={holeStyle}></div>
+			<div className={this.getStyle()}></div>
 		);
 	}
 }

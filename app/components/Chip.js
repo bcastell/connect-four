@@ -10,28 +10,29 @@ class Chip extends React.Component {
 	}
 
 	toggleHover() {
-		this.setState({
-			hover : !this.state.hover
-		});
+		this.setState(prevState => ({hover : !prevState.hover}));
+	}
+
+	getStyle() {
+		var style = "chip";
+
+		if (this.state.hover) {
+			if (this.props.red)
+				style += " chip-red";
+
+			else
+				style += " chip-yellow";
+		}
+
+		else
+			style += " chip-white";
+
+		return style;
 	}
 
 	render() {
-		var chipStyle = "chip";
-
-		if (this.state.hover && this.props.red) {
-				chipStyle += " chip-red";
-		}
-
-		else if (this.state.hover && !this.props.red) {
-				chipStyle += " chip-yellow";
-		}
-
-		else {
-			chipStyle += " chip-white";
-		}
-
 		return (
-			<button className={chipStyle}
+			<button className={this.getStyle()}
 					onClick={() => this.props.onClick()}
 					onMouseEnter={() => this.toggleHover()}
 					onMouseLeave={() => this.toggleHover()} >

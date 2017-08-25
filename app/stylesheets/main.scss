@@ -1,12 +1,10 @@
 @charset 'UTF-8';
 
-// Sass tools and helpers
+@import 'abstracts/mixins';
 @import 'abstracts/variables';
 
-// Components
 @import	'components/drop';
 @import	'components/chip';
-@import 'components/grid';
 @import 'components/row';
 @import 'components/hole';
 @import 'components/restart';

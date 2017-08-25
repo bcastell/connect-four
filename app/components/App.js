@@ -18,9 +18,11 @@ class App extends React.Component {
 	}
 
 	checkWin(holes, color) {
+		var i, j;
+
 		// Horizontal Check
-		for (let j = 0; j <= 35; j += 7) {
-			for (let i = j; i < j + 4; ++i) {
+		for (j = 0; j <= 35; j += 7) {
+			for (i = j; i < j + 4; ++i) {
 				if (holes[i] === color && holes[i + 1] === color &&
 					holes[i + 2] === color && holes[i + 3] === color) {
 					return true;
@@ -29,8 +31,8 @@ class App extends React.Component {
 		}
 
 		// Vertical Check
-		for (let j = 0; j <= 6; ++j) {
-			for (let i = j; i <= j + 14; i += 7) {
+		for (j = 0; j <= 6; ++j) {
+			for (i = j; i <= j + 14; i += 7) {
 				if (holes[i] === color && holes[i + 7] === color &&
 					holes[i + 14] === color && holes[i + 21] === color) {
 					return true;
@@ -39,8 +41,8 @@ class App extends React.Component {
 		}
 
 		// Ascending Diagonal Check
-		for (let j = 21; j <= 35; j += 7) {
-			for (let i = j; i < j + 4; ++i) {
+		for (j = 21; j <= 35; j += 7) {
+			for (i = j; i < j + 4; ++i) {
 				if (holes[i] === color && holes[i - 6] === color &&
 					holes[i - 12] === color && holes[i - 18] === color) {
 					return true;
@@ -49,8 +51,8 @@ class App extends React.Component {
 		}
 
 		// Descending Diagonal Check
-		for (let j = 24; j <= 38; j += 7) {
-			for (let i = j; i < j + 4; ++i) {
+		for (j = 24; j <= 38; j += 7) {
+			for (i = j; i < j + 4; ++i) {
 				if (holes[i] === color && holes[i - 8] === color &&
 					holes[i - 16] === color && holes[i - 24] === color) {
 					return true;
@@ -62,27 +64,27 @@ class App extends React.Component {
 	}
 
 	handleClick(i) {
-		// Fix when column is full, clicked, and color still changes
 		if (!this.state.winner) {
-		const holes = this.state.grid.slice();
-		var filled = false;
-		for (let j = 41 - Math.abs(i - 6); j >= 0; j -= 7) {
-			if (!holes[j]) {
-				holes[j] = this.state.red ? 'R' : 'Y';
-				filled = true;
-				break;
+			const holes = this.state.grid.slice();
+			const color = this.state.red ? "R" : "Y";
+
+			let filled = false;
+			for (let j = 41 - Math.abs(i - 6); j >= 0; j -= 7) {
+				if (!holes[j]) {
+					holes[j] = color;
+					filled = true;
+					break;
+				}
 			}
-		}
 
-		const flip = filled ? !this.state.red : this.state.red;
-		const color = this.state.red ? 'R' : 'Y';
-		const won = this.checkWin(holes, color);
+			const flip = filled ? !this.state.red : this.state.red;
+			const won = this.checkWin(holes, color);
 
-		this.setState({
-			red : flip,
-			grid : holes,
-			winner : won
-		});
+			this.setState({
+				red : flip,
+				grid : holes,
+				winner : won
+			});
 		}
 	}
 

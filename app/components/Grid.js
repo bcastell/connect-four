@@ -9,7 +9,7 @@ class Grid extends React.Component {
 
 	render() {
 		return (
-			<div className="grid">
+			<div>
 				{this.renderRow(6)}
 				{this.renderRow(13)}
 				{this.renderRow(20)}

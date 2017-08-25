@@ -1,6 +1,4 @@
 .drop {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@include flexbox();
 	margin-bottom: 20px;
 }

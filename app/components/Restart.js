@@ -6,24 +6,27 @@ class Restart extends React.Component {
 		super(props);
 	}
 
+	getStyle() {
+		var style = "reset-button";
+
+		if (this.props.won) {
+			if (this.props.color)
+				style += " reset-button-yellow";
+
+			else
+				style += " reset-button-red";
+		}
+
+		else
+			style += " reset-button-blue";
+
+		return style;
+	}
+
 	render() {
-		var buttonStyle = "reset-button";
-
-		if (this.props.won && this.props.color) {
-			buttonStyle += " reset-button-yellow";
-		}
-
-		else if (this.props.won && !this.props.color) {
-			buttonStyle += " reset-button-red";
-		}
-
-		else {
-			buttonStyle += " reset-button-blue";
-		}
-
 		return (
 			<div className="restart">
-				<a className={buttonStyle} onClick={this.props.onClick}>RESET</a>
+				<a className={this.getStyle()} onClick={this.props.onClick}>RESET</a>
 			</div>
 		);
 	}
